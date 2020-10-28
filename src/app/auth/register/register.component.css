@@ -1,0 +1,143 @@
+* {
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s;
+    font-family: 'Segoe_UI_Semibold';
+    color: #444444;
+}
+
+.header-home {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 15% 70% 15%;
+    -ms-grid-columns: 15% 70% 15%;
+    padding: 2rem;
+    margin: 0 2rem;
+    border-bottom: solid;
+    border-bottom-color: #eeefea;
+    border-width: 5px;
+}
+
+.logo {
+    background: url('../../../assets/img/logos.jpg');
+    background-size: 190px 26px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.bmw-title {
+    font-family: 'Segoe_UI_Bold';
+    text-align: center;
+}
+
+.container-form {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 25% 50%;
+    -ms-grid-columns: 25% 50%;
+    padding: 70px 10px 10px 10px;
+    margin: 10px;
+}
+
+.item {
+    padding: 1% 0;
+}
+
+.item h2 {
+    color: #555555 !important;
+    font-family: 'Segoe_UI_Semibold' !important;
+    padding-left: 7% !important;
+}
+
+.item p {
+    color: #666666 !important;
+    font-family: 'Segoe_UI_Semibold' !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 2% !important;
+}
+
+.container-fields {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 40% 50%;
+    -ms-grid-columns: 40% 50%;
+    padding-top: 2%;
+}
+
+.container-fields2 {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 17.2% 80%;
+    -ms-grid-columns: 17.2% 80%;
+    padding-top: 2%;
+    align-content: center;
+}
+
+.container-fields2 .item input {
+    background-color: #eeefea !important;
+    border: 1px solid #666666 !important;
+    color: #858282 !important;
+    margin: 0.8% 0% !important;
+    font-family: 'Segoe_UI_Semibold' !important;
+    padding: 1.5% 1% !important;
+    font-size: 0.8rem !important;
+    caret-color: #92a2bd !important;
+}
+
+.container-fields2 .item.last {
+    margin-bottom: 5%;
+}
+
+.item.error p {
+    color: #d41212 !important;
+    font-family: 'Segoe_UI_Semibold' !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 2% !important;
+    text-align: center !important;
+}
+
+.container-fields .item p {
+    text-align: right !important;
+    padding-right: 10%;
+}
+
+.bmw-btn {
+    text-align: left;
+    padding: 2% 5%;
+    background: #92a2bd;
+    border: 0;
+    margin-left: 17.2%;
+    width: 50%;
+    height: 20%;
+    cursor: pointer;
+}
+
+.bmw-btn>a {
+    color: white !important;
+    font-family: 'Segoe_UI_Semibold';
+    text-decoration: none;
+    display: block;
+    background: url('../../../assets/icons/next_24_navigation_negativ_default.png') right center no-repeat;
+}
+
+.bmw-btn>svg {
+    color: white !important;
+    font-family: 'Segoe_UI_Semibold';
+    text-decoration: none;
+    display: block;
+}
+
+.bmw-btn:disabled {
+    border: 1px solid #d8d8d8;
+    background-color: #d8d8d8;
+}
+
+.bmw-btn:disabled>a {
+    color: #999999 !important;
+    background: none !important;
+}
+
+input {
+    padding: 0 3%;
+    width: 80%
+}

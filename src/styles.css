@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'Segoe_UI_Bold_Italic';
+    src: url('./assets/fonts/Segoe_UI_Bold_Italic.ttf') format('truetype'), url('./assets/fonts/Segoe_UI_Bold_Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Segoe_UI_Bold';
+    src: url('./assets/fonts/Segoe_UI_Bold.ttf') format('truetype'), url('./assets/fonts/Segoe_UI_Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Segoe_UI_Italic';
+    src: url('./assets/fonts/Segoe_UI_Italic.ttf') format('truetype'), url('./assets/fonts/Segoe_UI_Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Segoe_UI_Semibold';
+    src: url('./assets/fonts/Segoe_UI_Semibold.ttf') format('truetype'), url('./assets/fonts/Segoe_UI_Semibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Segoe_UI';
+    src: url('./assets/fonts/Segoe_UI.ttf') format('truetype'), url('./assets/fonts/Segoe_UI.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Segoe_UI_Semibold_Italic';
+    src: url('./assets/fonts/Segoe_UI_Semibold_Italic.ttf') format('truetype'), url('./assets/fonts/Segoe_UI_Semibold_Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Segoe_UI_Light';
+    src: url('./assets/fonts/Segoe_UI_Light.ttf') format('truetype'), url('./assets/fonts/Segoe_UI_Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body {
+    margin: 0
+}
+
+body .ui-button {
+    margin: 0;
+    color: #ffffff;
+    background-color: #EA983D !important;
+    font-size: 12px;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+body .ui-button:hover {
+    background-color: #EA983D !important;
+}
+
+body .ui-corner-right {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+body .ui-corner-left {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+body .ui-widget {
+    font-family: 'Segoe_UI_Semibold' !important;
+    font-size: 14px;
+    text-decoration: none;
+    color: #064e78;;
+    text-transform: uppercase;
+}

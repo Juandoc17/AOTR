@@ -1,0 +1,421 @@
+@media (max-width: 640px) {
+
+    .vin-element .name{
+        padding: 5% 6% !important;
+    }
+    
+    .vin-element .tech{
+        padding: 5% 6% !important;
+    }
+    
+    .vin-element .date{
+        padding: 5% 6% !important;
+    }
+
+    .options-container {
+        grid-template-columns: 10% 20% 70% !important;
+        -ms-grid-columns: 10% 20% 70% !important;
+    }
+
+    h3.bmw-title {
+        font-size: 1em;
+        font-family: 'Segoe_UI_Semibold' !important;
+        text-align: center;
+    }
+
+    h4.bmw-title {
+        font-size: 0.8em;
+        font-family: 'Segoe_UI_Semibold' !important;
+    }
+
+    .display {
+        display: grid;
+        display: -ms-grid;
+        grid-template-columns: 100% !important;
+        -ms-grid-columns: 100% !important;
+        padding: 0px 10px;
+        height: 100%;
+    }
+
+    .side-menu{
+        display: none !important;
+    }
+
+    .list-element {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+}
+
+.display-loader {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.8);
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+.display-loader .loader-loading {
+    border: 10px solid #003C53;
+    border-top: 10px solid #EA983D;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    animation: spin 2s linear infinite;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s;
+    font-family: 'Segoe_UI';
+    color: #003C53;
+}
+
+.display {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 25% 75%;
+    -ms-grid-columns: 25% 75%;
+    padding: 0px 10px;
+    height: 100%;
+}
+
+a, a:link, a:visited {
+    color: #666666;
+    text-decoration: none;
+}
+
+.loader {
+    border: 10px solid #003C53;
+    border-top: 10px solid #EA983D;
+    border-radius: 50%;
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.side-menu {
+    border-right: solid;
+    border-right-color: #eeefea;
+    border-width: 2px;
+    padding-right: 10px;
+}
+
+h3.bmw-title {
+    font-family: 'Segoe_UI_Bold';
+    text-align: center;
+}
+
+.course {
+    padding: 10px;
+    margin-bottom: 2px;
+}
+
+.course>a:hover {
+    color: black;
+}
+
+.course:hover {
+    border-bottom-color: #92a2bd;
+}
+
+.active {
+    border-bottom-color: #92a2bd !important;
+}
+
+.card {
+    padding: 0% 1% 0% 1%;
+}
+
+.card-bg {
+    background-color: #003C53;
+    color: #EA983D !important;
+    padding: 0.8rem;
+    margin-bottom: 0.7rem;
+}
+
+.card-bg h3{
+    color: white !important;
+}
+
+.card-bg>p {
+    padding: 2px;
+}
+
+.card ul {
+    padding-left: 40px;
+    list-style-type: square;
+}
+
+
+.bmw-btn {
+    text-align: left;
+    padding: 0 30px;
+    background: #92a2bd;
+    border: 0;
+    min-width: 304px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.bmw-btn>a {
+    color: white;
+    font-family: 'Segoe_UI_Semibold';
+    text-decoration: none;
+    display: block;
+    background: url('../../../assets/icons/next_24_navigation_negativ_default.png') right center no-repeat;
+}
+
+.bmw-btn-red {
+    background: #d20000;
+    margin-left: 3px;
+}
+
+.bmw-btn-red>a {
+    color: white;
+    font-family: 'Segoe_UI_Semibold';
+    text-decoration: none;
+    display: block;
+    background: url('../../../assets/icons/close_24_navigation_negativ_mouseover.png') right center no-repeat;
+}
+
+.bmw-btn:hover {
+    background-color: #7c89a1;
+}
+
+.bmw-btn-red:hover {
+    background-color: #bb0000;
+}
+
+.bmw-btn:disabled {
+    border: 1px solid #d8d8d8;
+    background-color: #d8d8d8;
+    cursor: not-allowed;
+}
+
+.bmw-btn:disabled>a {
+    color: #999999 !important;
+    background: none !important;
+}
+
+.bmw-btn-red:disabled {
+    border: 1px solid #d8d8d8;
+    background-color: #d8d8d8;
+    cursor: not-allowed;
+}
+
+.bmw-btn-red:disabled>a {
+    color: #999999 !important;
+    background: none !important;
+}
+
+.quantity {
+    padding: 0;
+    padding-left: 10px;
+    min-width: 40px;
+    margin-top: 5px;
+}
+
+
+
+.accordion-active {
+    background-color: #eeefea;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.accordion-active>h3 {
+    display: block;
+    background: url('../../../assets/icons/down_24_navigation_default.png') right center no-repeat;
+}
+
+.accordion {
+    background-color: #eeefea;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.accordion>h3 {
+    display: block;
+    background: url('../../../assets/icons/next_24_navigation_default.png') right center no-repeat;
+}
+
+.accordion-panel {
+    display: none;
+    overflow: hidden;
+}
+
+li>a {
+    cursor: pointer;
+}
+
+.course-disabled {
+    color: #c1c1c1;
+}
+
+.course-disabled:hover {
+    color: #c1c1c1 !important;
+}
+
+.module-footer {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 18% 2% 80%;
+    -ms-grid-columns: 18% 2% 80%;
+    /* padding: 0px 10px 10px 10px;
+    text-align: center; */
+}
+
+.download-link {
+    font-family: 'Segoe_UI_Semibold';
+    color: #444444;
+    background: url(../../../assets/icons/next_24_navigation_default.png) left center no-repeat;
+    background-size: 18px;
+    padding: 18px;
+    cursor: pointer;
+}
+
+.download-link:hover {
+    color: black;
+}
+
+.vins-grid {
+    /* padding: 0px 10px 10px 10px;
+    text-align: center; */
+    overflow-y: auto !important;
+    min-height: 55vh !important;
+    height: 55vh !important;
+    padding: 1%;
+    padding-bottom: 2% !important;
+    border-bottom: 3px solid #f5f5f5;
+}
+
+.vin-element{
+    font-family: 'Segoe_UI_Semibold';
+    border-top: 1px solid #e2e2e2;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+    text-align: center;
+    cursor: pointer;
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 33% 33% 33%;
+    -ms-grid-columns: 33% 33% 33%;
+    padding: 1% 0% 1% 0% !important;
+    background-color: #F9F9F9;
+    justify-content: center;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+.vin-element .name{
+    color: #003C53;
+    /*color: #92a2bd !important;*/
+    padding: 3% 6%;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.vin-element .tech{
+    color: #5a5959;
+    padding: 3% 6%;
+    background-color: rgb(245, 243, 243);
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.vin-element .date{
+    color: #003C53;
+    padding: 3% 6%;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.vin-element:hover{
+    opacity: 0.7;
+}
+
+
+.vin-element:last-child {
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.options-container {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 33% 33% 33%;
+    -ms-grid-columns: 33% 33% 33%;
+    padding: 0% 0% 1% 0%;
+}
+
+.option-div {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 90% 10%;
+    -ms-grid-columns: 90% 10%;
+}
+
+.icon {
+    margin-left: 10% !important;
+    height: 100%;
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.clear {
+    background-image: url('../../../assets/icons/close_24_navigation_default.png');
+}
+
+.clear:hover {
+    background-image: url('../../../assets/icons/close_24_navigation_mouseover.png');
+}
+
+input {
+    height: 2rem;
+    width: 100%;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    font-size: 1rem;
+    padding-left: 1rem;
+}
+
+.card-bg2 {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 33% 33% 33%;
+    -ms-grid-columns: 33% 33% 33%;
+    background-color: #EA983D;
+    padding: 0.6rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+
+

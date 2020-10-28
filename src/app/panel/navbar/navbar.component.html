@@ -1,0 +1,58 @@
+<div class="header-panel">
+    <div class="logo"></div>
+
+    <h1 class="bmw-title">AOT</h1>
+    
+
+    <!-- <div class="corner" *ngIf="type=='dealer'"> 
+        <p>Bienvenido:<br/><strong>{{user.dealer_id}}</strong></p>
+    </div>-->
+    <div class="corner" *ngIf="type=='dealer'">
+        <p>Welcome:<br/><strong>{{user.dealer_id}}</strong></p>
+    </div>
+
+    <!-- <div class="corner"  *ngIf="type=='usuario'"> 
+        <p>Bienvenido:<br/><strong>{{user.user_id}}</strong></p>
+    </div>-->
+    <div class="corner"  *ngIf="type=='usuario'">
+        <p>Welcome:<br/><strong>{{user.user_id}}</strong></p>
+    </div>
+    <div title="Log out">
+        <div class="icon log-out" (click)="logout()"></div>
+    </div>
+</div>
+
+<div class="header-panel2">
+    <h1 class="bmw-title">DIA</h1>
+    
+    <div title="Log out">
+        <div class="icon burger" (click)="toggleMenu()"></div>
+    </div>
+</div>
+
+<div class="user-header-menu" *ngIf="menuActive==true" [ngClass]="{'active-menu': menuActive==true}">
+    <div class="side-menu colored">
+        <ul class="vertical-menu">
+            <!-- <li class="naming" *ngIf="type=='dealer'"><a>Dealer: {{user.dealer_id}}</a></li> -->
+            <li class="naming" *ngIf="type=='dealer'"><a>Dealer: {{user.dealer_id}}</a></li>
+            <!-- <li class="naming" *ngIf="type=='usuario'"><a>Usuario: {{user.user_id}}</a></li> -->
+            <li class="naming" *ngIf="type=='usuario'"><a>User: {{user.user_id}}</a></li>
+            <li *ngFor="let menu of menuContent">
+                <a *ngIf="type=='dealer' && menu.name!='Borrar Caso'" class="linking" (click)="goTo(menu.link)" title="{{menu.name}}">{{menu.name}}</a>
+                <a *ngIf="type=='dealer' && menu.name=='Borrar Caso'" class="linking" (click)="doStuff()" title="{{menu.name}}">{{menu.name}}</a>
+            </li>
+            <!-- <li class="finishing"><a class="linking" (click)="logout()">Cerrar Sesión</a></li> -->
+            <li class="finishing"><a class="linking" (click)="logout()">Log Out</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu-tabs">
+    <div class="void"></div>
+    <div class="active option">
+        <!-- <a routerLink="/panel/vins">Inicio</a></div> -->
+        <a routerLink="/panel/vins">Home</a></div>
+    <div class="void"></div>
+</div>
+
+<router-outlet (activate)="onActivate($event)"></router-outlet>

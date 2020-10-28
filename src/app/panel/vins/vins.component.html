@@ -1,0 +1,170 @@
+<!-- L O A D E R-->
+<div class="display-loader" *ngIf="loader==true">
+  <div  class="loader-loading">
+</div>
+</div>
+
+<!-- M A I N  V I E W-->
+<div *ngIf="loader==false" class="display">
+  <div class="side-menu">
+    <!-- <h3 class="bmw-title">MENÚ</h3> -->
+    <h3 class="bmw-title">MENU</h3>
+    <div (click)="options_expanded=!options_expanded"
+      [ngClass]="{'accordion-active': options_expanded, 'accordion': !options_expanded}">
+      <!-- <h3>OPCIONES</h3> -->
+      <h3>OPTIONS</h3>
+    </div>
+    <div [ngStyle]="{'display': options_expanded?'block':'none'}">
+      <ul>
+        <li *ngFor="let course of options;" class="course active">
+          <a>
+            {{ course.name}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="options-container">
+      <div>
+      </div>
+
+      <div>
+      </div>
+
+      <div class="option-div" *ngIf="type=='dealer'">
+        <!--<input [(ngModel)]="filterName" name="filterName" field="dealer-code" autocomplete="off"
+          placeholder="Digitar VIN para filtrar" (keyup)="filterDealer($event)" type="text" pInputText>-->
+
+          <input [(ngModel)]="filterName" name="filterName" field="dealer-code" autocomplete="off"
+          placeholder="Type CASE to filter list" (keyup)="filterDealer($event)" type="text" pInputText>
+          
+        <div title="Clear Input">
+          <div class="icon clear" (click)="cleanField()"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card-bg">
+      <!-- <h3 class="bmw-title">LISTADO DE CASOS</h3> -->
+      <h3 class="bmw-title">CASE LIST</h3>
+    </div>
+
+    <div class="card-bg2" *ngIf="type=='dealer'">
+      <div class="card-table">
+        <!-- <h4 class="bmw-title">VIN</h4> -->
+        <h4 class="bmw-title">CASE</h4>
+      </div>
+
+      <div class="card-table">
+        <!-- <h4 class="bmw-title">CÓDIGO EMPLEADO</h4> -->
+        <h4 class="bmw-title">EMPLOYEE ID</h4>
+      </div>
+
+      <div class="card-table">
+        <!-- <h4 class="bmw-title">CREADO</h4> -->
+        <h4 class="bmw-title">CREATED ON</h4>
+      </div>
+    </div>
+
+    <div class="card-bg2" *ngIf="type=='usuario'">
+      <div class="card-table">
+        <!-- <h4 class="bmw-title">VIN</h4> -->
+        <h4 class="bmw-title">CASE</h4>
+      </div>
+
+      <div class="card-table">
+        <!-- <h4 class="bmw-title">CREADO</h4> -->
+        <h4 class="bmw-title">CREATED ON</h4>
+      </div>
+
+      <div class="card-table">
+        <!-- <h4 class="bmw-title">HORA</h4> -->
+        <h4 class="bmw-title">TIME</h4>
+      </div>
+    </div>
+
+    <div class="vins-grid" *ngIf="type=='dealer'">
+      <div *ngIf="filterActive==false">
+        <div *ngFor="let vin of dealerResults" class="list-element" (click)="navigateTo(vin._id)">
+          <a class="vin-element" routerLink="case-detail/{{vin._id}}" title="{{vin.employee_id}}"
+            routerLinkActive="active">
+            <div class="name">
+              {{vin.case_id | uppercase}}
+            </div>
+            <div class="tech">
+              {{vin.employee_id}}
+
+            </div>
+            <div class="date">
+              {{vin.date | date:'medium'}}
+            </div>
+          </a>
+        </div>
+
+        <!-- <div *ngIf="dealerResults.length==0"> 
+          No hay VINS activos para esta cuenta.
+        </div>-->
+
+        <div *ngIf="dealerResults.length==0">
+          No VIN cases for this account.
+        </div>
+      </div>
+
+      <div *ngIf="filterActive==true">
+        <div *ngFor="let vin of dealersFiltered" (click)="navigateTo(vin._id)">
+          <a class="vin-element" routerLink="case-detail/{{vin._id}}" title="{{vin.employee_id}}"
+            routerLinkActive="active">
+            <div class="name">
+              {{vin.case_id | uppercase}}
+            </div>
+            <div class="tech">
+              {{vin.employee_id}}
+
+            </div>
+            <div class="date">
+              {{vin.date | date:'medium'}}
+            </div>
+          </a>
+        </div>
+
+        <!-- <div *ngIf="dealersFiltered.length==0"> 
+          No hay VINS activos para esta cuenta.
+        </div>-->
+
+        <div *ngIf="dealersFiltered.length==0">
+          No VIN cases for this account.
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="vins-grid" *ngIf="type=='usuario'">
+      <div *ngIf="filterActive==false">
+        <div *ngFor="let vin of userResults" (click)="navigateTo(vin._id)">
+          <a class="vin-element" routerLink="case-detail/{{vin._id}}" title="{{vin._id}}"
+            routerLinkActive="active">
+            <div class="name">
+              {{vin.vin_id | uppercase}}
+            </div>
+            <div class="tech">
+              {{vin.date | date:'mediumDate'}}
+            </div>
+            <div class="date">
+              {{vin.date | date:'mediumTime'}}
+            </div>
+          </a>
+        </div>
+
+        <!-- <div *ngIf="userResults.length==0">
+          No hay VINS activos para esta cuenta.
+        </div> -->
+        <div *ngIf="userResults.length==0">
+          No VIN cases for this account.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<!-- M A I N  V I E W -->
+<div class="header-home">
+  <div class="logo"></div>
+  <h1 class="bmw-title">AOT</h1>
+  <div></div>
+</div>
+
+<div class="header-home2">
+  <div></div>
+  <h1 class="bmw-title">DIA</h1>
+  <div></div>
+</div>
+
+
+<div class="container-form">
+  <div></div>
+  <div>
+    <div class="item">
+      <!-- <h2>INICIAR SESIÓN:</h2> -->
+      <h2>LOGIN:</h2>
+    </div>
+    <div class="item">
+      <!-- <p>Digite sus credenciales para ingresar a la aplicación.</p> -->
+      <p>Type your credentials to access into the application.</p>
+    </div>
+
+    <form [formGroup]="loginForm" class="container-fields2">
+      <div class="item">
+      </div>
+
+      <div class="item">
+        <!-- <input type="text" formControlName="user_id" placeholder="ID"> -->
+        <input type="text" formControlName="user_id" placeholder="ID">
+      </div>
+
+      <div class="item">
+      </div>
+
+      <div class="item last">
+        <!-- <input type="password" formControlName="password" placeholder="Contraseña"> -->
+        <input type="password" formControlName="password" placeholder="Password">
+      </div>
+
+      <div class="item">
+      </div>
+
+      <div class="item">
+        <!-- <button *ngIf="!loading" class="bmw-btn" (click)="loginDealer()" [disabled]="!loginForm.valid"><a>INGRESAR</a></button> -->
+        <button *ngIf="!loading" class="bmw-btn" (click)="loginDealer()" [disabled]="!loginForm.valid"><a>SIGN IN</a></button>
+        <button *ngIf="loading" class="bmw-btn">
+          <i class="fas fa-circle-notch fa-spin"></i>
+        </button>
+      </div>
+    </form>
+
+    <div class="item error">
+      <p>
+        {{error}}
+      </p>
+    </div>
+
+  </div>
+</div>

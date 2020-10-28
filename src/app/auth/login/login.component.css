@@ -1,0 +1,226 @@
+* {
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s;
+    font-family: 'Segoe_UI';
+    color: #003C53;
+}
+
+@media (min-width: 641px){
+    
+}
+
+@media (max-width: 640px) {
+    .header-home2 {
+        display: grid !important;
+        display: -ms-grid !important;
+    }
+
+    .header-home2 .bmw-title {
+        font-size: 1.5rem !important;
+        padding-left: 8% !important;
+    }
+
+    .header-home {
+        display: none !important;
+    }
+
+    .container-form {
+        display: grid;
+        display: -ms-grid;
+        grid-template-columns: 10% 80% !important;
+        -ms-grid-columns: 10% 80% !important;
+        padding: 5% 2% 2% 2%;
+    }
+
+    .item p{
+        color: #666666 !important;
+        font-family: 'bmw_group_condensedregular' !important;
+        font-size: 0.9rem !important;
+        margin-bottom: 5vh !important;
+        margin-top: 5vh !important;
+      }
+
+      .container-fields2 {
+        grid-template-columns: 5% 90% !important;
+        -ms-grid-columns: 5% 90% !important;
+        padding-top: 0% !important;
+        align-content: center;
+    }
+
+    .container-fields2 .item input {
+        background-color: #eeefea !important;
+        margin: 3% 0% !important;
+        padding: 3% 1% !important;
+        font-size: 0.8rem !important;
+        width: 95% !important;
+    }
+
+    .bmw-btn {
+        text-align: left;
+        margin-left: 0% !important;
+        padding:  4% 5% !important;
+        background: #92a2bd;
+        border: 0;
+        width: 90% !important;
+        height: 30% !important;
+        cursor: pointer;
+
+    }
+
+    .item{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+}
+
+.header-home {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 15% 70% 15%;
+    -ms-grid-columns: 15% 70% 15%;
+    padding: 2vh 5vh;
+    border-bottom: solid;
+    border-bottom-color: #eeefea;
+    border-width: 5px;
+}
+
+.header-home2 {
+    grid-template-columns: 10% 80% 10% ;
+    -ms-grid-columns: 10% 80% 10% ;
+    padding: 2vh 5vh;
+    height: 8vh;
+    display: none;
+    border-bottom: solid;
+    border-bottom-color: #eeefea;
+    border-width: 5px;
+    text-align: center;
+}
+
+.logo {
+    background: url('../../../assets/img/kapta.png');
+    background-size: 160px 40px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.bmw-title {
+    font-family: 'Segoe_UI_Bold';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0vh 2vh;
+}
+
+.container-form {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 25% 50%;
+    -ms-grid-columns: 25% 50%;
+    padding: 5% 2% 2% 2%;
+    margin: 2%;
+}
+
+.item {
+    padding: 1% 0;
+}
+
+.item h2 {
+    color: #003C53 !important;
+    font-family: 'Segoe_UI_Semibold' !important;
+    text-align: center;
+}
+
+.item p {
+    color: #666666 !important;
+    font-family: 'Segoe_UI' !important;
+    font-size: 1.1rem !important;
+    text-align: center;
+}
+
+.container-fields {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 40% 50%;
+    -ms-grid-columns: 40% 50%;
+    padding-top: 2%;
+}
+
+.container-fields2 {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 17.2% 80%;
+    -ms-grid-columns: 17.2% 80%;
+    padding-top: 2%;
+    align-content: center;
+}
+
+.container-fields2 .item input {
+    background-color: #eeefea !important;
+    box-shadow: none !important;
+    color: #003C53 !important;
+    margin: 0.8% 0% !important;
+    font-family: 'Segoe_UI_Semibold' !important;
+    padding: 1.5% 1% !important;
+    font-size: 0.9rem !important;
+    caret-color: rgb(11, 111, 151) !important;
+}
+
+.container-fields2 .item.last {
+    margin-bottom: 5%;
+}
+
+.item.error p {
+    color: #d41212 !important;
+    font-family: 'Segoe_UI' !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 2% !important;
+    text-align: center !important;
+}
+
+.container-fields .item p {
+    text-align: right !important;
+    padding-right: 10%;
+}
+
+.bmw-btn {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 2% 5%;
+    background: #EA983D;
+    border: 0;
+    margin-left: 17.2%;
+    width: 50%;
+    height: 20%;
+    cursor: pointer;
+}
+
+.bmw-btn>a {
+    color: white !important;
+    font-family: 'Segoe_UI_Semibold';
+    text-decoration: none;
+    display: block;
+}
+
+.bmw-btn>svg {
+    color: #003C53 !important;
+    font-family: 'Segoe_UI_Semibold';
+    text-decoration: none;
+    display: block;
+    text-align: center !important;
+}
+
+.bmw-btn:disabled {
+    background-color: #d8d8d8;
+}
+
+.bmw-btn:disabled>a {
+    color: #999999 !important;
+    background: none !important;
+}
+
+input {
+    padding: 0 3%;
+    width: 80%
+}

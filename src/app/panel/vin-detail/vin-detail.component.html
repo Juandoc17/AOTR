@@ -1,0 +1,289 @@
+<!-- M O D A L E S-->
+<!-- Modal Contact Dealership-->
+<div class="modal" *ngIf="displayModalContact==true">
+    <div class="modal-content contact">
+        <div class="exit-header">
+            <H1>CONTACT DEALER</H1>
+            <div class="exit" (click)="closeModalContact()"></div>
+        </div>
+        <br>
+        <br>
+        <div class="alert">
+            <p>You can contact your Dealer in order to get feedback about all the content displayed on the VIN case. Remember being specific about details and concerns in order to get a better feedback.</p>
+            <br>
+            <form [formGroup]="loginForm" class="container-fields2">
+                <div class="item">
+                </div>
+
+                <div class="item">
+                    <input type="text" formControlName="dealerid" placeholder="Type the dealer ID">
+                </div>
+
+                <div class="item">
+                </div>
+
+                <div class="item last">
+                    <textarea formControlName="content" placeholder="Type your message here"></textarea>
+                </div>
+
+                <div class="item">
+                </div>
+
+                <div class="item">
+                    <button class="bmw-btn" (click)="displayModalContact=false" [disabled]="!loginForm.valid">
+            <a>SEND</a>
+          </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Modal Delete VIN Content-->
+<div class="modal" *ngIf="displayModalDelete==true">
+    <div class="modal-content delete">
+        <div class="exit-header">
+            <!-- <h2>Eliminar Caso</h2> -->
+            <h2>Delete Case</h2>
+            <div class="exit" (click)="closeModalDelete()">
+            </div>
+        </div>
+        <div class="container-alert">
+            <div class="alert" *ngIf="displayDeleting==false && displayResponse==false">
+                <img src="./assets/icons/highlight_96_communication_default.svg" />
+                <br>
+                <!-- <p>Recuerde que una vez elimine el caso, no podrá verlo en el futuro.</p> -->
+                <p>Remember that once you delete a case, you will not be able to access it in the future.</p>
+                <br>
+                <!-- <p> 
+          <strong>¿Está seguro que desea eliminar este caso de su lista?</strong>
+        </p>-->
+                <p>
+                    <strong>Are you sure that you want to delete the case?</strong>
+                </p>
+                <br>
+                <br>
+                <!-- <button class="bmw-btn" (click)="deleteVincase()"><a>CONTINUAR</a></button> -->
+                <button class="bmw-btn" (click)="deleteVincase()"><a>CONTINUE</a></button>
+            </div>
+
+            <div *ngIf="displayDeleting==true" class="loader-loading"></div>
+
+
+            <div class="alert" *ngIf="displayDeleting==false && displayResponse==true">
+                <div *ngIf="displayFailure==true && displaySuccess==false">
+                    <img src="./assets/icons/close_96_navigation_default.svg" />
+                    <br>
+                    <!-- <p>No se pudo eliminar el caso, verifique e intente nuevamente.</p> -->
+                    <p>The case could not be deleted, please check and try again.</p>
+                    <br>
+                    <br>
+                    <!-- <button class="bmw-btn" (click)="cerrarModal()"><a>CERRAR</a></button> -->
+                    <button class="bmw-btn" (click)="cerrarModal()"><a>CLOSE</a></button>
+                </div>
+
+                <div *ngIf="displayFailure==false && displaySuccess==true">
+                    <img src="./assets/icons/checkmark_96_navigation_default.svg" />
+                    <br>
+                    <!-- <p>Ha eliminado el caso exitosamente.</p> -->
+                    <p>Case successfully deleted.</p>
+                    <!-- <p>Click en CONTINUAR para volver a la vista principal.</p> -->
+                    <p>Click on CONTINUE to return to the Case List.</p>
+                    <br>
+                    <br>
+                    <!-- <button class="bmw-btn" (click)="retornar()"><a>CONTINUAR</a></button> -->
+                    <button class="bmw-btn" (click)="retornar()"><a>CONTINUE</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!--Modal VIN image Detail-->
+<div class="modal" *ngIf="displayModalDetail==true">
+    <div class="modal-content detail">
+        <div class="exit-header">
+            <!-- <h2>Detalle Imagen</h2> -->
+            <h2>Image Details</h2>
+            <div class="exit" (click)="closeModalDetail()"></div>
+        </div>
+        <div class="description">
+            <!-- <h4>FECHA: <strong>{{vinSelected.date | date:'medium'}}</strong></h4> -->
+            <h4>DATE: <strong>{{vinSelected.date | date:'medium'}}</strong></h4>
+            <br *ngIf="type=='dealer'">
+            <!-- <h4 *ngIf="type=='dealer'">EMPLEADO: <strong>{{vinSelected.employee_id}}</strong></h4> -->
+            <h4 *ngIf="type=='dealer'">EMPLOYEE: <strong>{{vinSelected.employee_id}}</strong></h4>
+            <br>
+            <!-- <h4>DESCRIPCIÓN:</h4> -->
+            <h4>DESCRIPTION:</h4>
+            <p *ngIf="vinSelected.description!==''">{{vinSelected.description}}</p>
+            <!-- <p *ngIf="vinSelected.description==''">No hay descripción suministrada a la imagen.</p> -->
+            <p *ngIf="vinSelected.description==''">No description provided.</p>
+        </div>
+
+        <div class="alert">
+            <img class="detail-image" src="{{vinSelected.source}}" />
+        </div>
+    </div>
+</div>
+
+
+<!--Modal VIN image Detail-->
+<div class="modal" *ngIf="displayModalDetailVideo==true">
+    <div class="modal-content detail">
+        <div class="exit-header">
+            <!-- <h2>Detalle Video</h2> -->
+            <h2>Video Details</h2>
+            <div class="exit" (click)="closeModalDetailVideo()"></div>
+        </div>
+        <div class="description">
+            <!-- <h4>FECHA: <strong>{{vinSelected.date | date:'medium'}}</strong></h4> -->
+            <h4>DATE: <strong>{{vinSelected.date | date:'medium'}}</strong></h4>
+            <br *ngIf="type=='dealer'">
+            <!-- <h4 *ngIf="type=='dealer'">EMPLEADO: <strong>{{vinSelected.employee_id}}</strong></h4> -->
+            <h4 *ngIf="type=='dealer'">EMPLOYEE: <strong>{{vinSelected.employee_id}}</strong></h4>
+            <br>
+            <!-- <h4>DESCRIPCIÓN:</h4> -->
+            <h4>DESCRIPTION:</h4>
+            <p *ngIf="vinSelected.description!==''">{{vinSelected.description}}</p>
+            <!-- <p *ngIf="vinSelected.description==''">No hay descripción suministrada a la imagen.</p> -->
+            <p *ngIf="vinSelected.description==''">No description provided.</p>
+        </div>
+
+        <div class="alert">
+            <video width="80%" poster="./assets/img/CirculoColored.png" class="detail-image" controls *ngIf="video">
+        <source [src]="video" type="video/quicktime">
+        <source [src]="video" type="video/mp4"> 
+        <source [src]="video" type="video/mpeg"> 
+      </video>
+        </div>
+    </div>
+</div>
+
+<!-- L O A D E R-->
+<div class="display-loader" *ngIf="loader==true">
+    <div class="loader-loading">
+    </div>
+</div>
+
+
+<!-- M A I N  V I E W-->
+<div *ngIf="loader==false" class="display">
+    <div class="side-menu">
+        <!-- <h3 class="bmw-title">MENÚ</h3> -->
+        <h3 class="bmw-title">MENU</h3>
+        <div (click)="options_expanded=!options_expanded" [ngClass]="{'accordion-active': options_expanded, 'accordion': !options_expanded}">
+            <!-- <h3>OPCIONES</h3> -->
+            <h3>OPTIONS</h3>
+        </div>
+        <div [ngStyle]="{'display': options_expanded?'block':'none'}" *ngIf="type=='dealer'">
+            <ul>
+                <li *ngFor="let course of options;" class="course active" (click)="actionMenu(course.name)">
+                    <a>
+            {{ course.name}}
+          </a>
+                </li>
+            </ul>
+        </div>
+
+        <div [ngStyle]="{'display': options_expanded?'block':'none'}" *ngIf="type=='usuario'">
+            <ul>
+                <li *ngFor="let course of options2;" class="course active" (click)="actionMenu(course.name)">
+                    <a>
+            {{ course.name}}
+          </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="options-container">
+            <div>
+            </div>
+
+            <div>
+            </div>
+
+            <!--
+      <div class="option-div">
+        <input [(ngModel)]="filterName" name="filterName" field="dealer-code" autocomplete="off"
+          placeholder="Type VIN to filter list" (keyup)="filterDealer($event)" type="text" pInputText>
+        <div title="Clear Input">
+          <div class="icon clear" (click)="cleanField()"></div>
+        </div>
+      </div>-->
+        </div>
+
+        <div class="card-bg">
+            <h3 class="bmw-title">CASE: {{case_id | uppercase}}</h3>
+        </div>
+
+        <div class="card-bg2">
+            <div class="card-table">
+            </div>
+
+            <div class="card-table" *ngIf="type=='dealer'">
+                <!-- <h4 class="bmw-title">GENERADO POR: <strong>{{employee}}</strong></h4> -->
+                <h4 class="bmw-title">CREATED BY: <strong>{{employee}}</strong></h4>
+                <!-- <h4 class="bmw-title">FECHA: <strong>{{fecha | date:'medium'}}</strong></h4> -->
+                <h4 class="bmw-title">DATE: <strong>{{fecha | date:'medium'}}</strong></h4>
+            </div>
+
+            <div class="card-table" *ngIf="type=='usuario'">
+                <!-- <h4 class="bmw-title">GENERADO: <strong>{{fecha | date:'medium'}}</strong></h4> -->
+                <h4 class="bmw-title">DATE: <strong>{{fecha | date:'medium'}}</strong></h4>
+            </div>
+
+            <div class="card-table">
+            </div>
+        </div>
+
+        <div class="gallery-grid">
+            <div *ngIf="vinList.length==0">
+            </div>
+
+            <div class="image-item" *ngFor="let image of vinList">
+                <div class="image-item" *ngIf="image.source.includes('-blob.png')" (click)="showDetail(image)">
+                    <img src="{{image.source}}" />
+                </div>
+
+                <div class="image-item" *ngIf="image.source.includes('-blob.mov') || image.source.includes('-blob.mp4')" (click)="showDetailVideo(image)">
+                    <video width="100%" poster="./assets/img/CirculoColored.png" class="detail-image">
+            <source [src]="" type="video/quicktime">
+            <source [src]="" type="video/mp4"> 
+            <source [src]="" type="video/mpeg"> 
+          </video>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-grid">
+            <div>
+                <swiper *ngIf="tipo == 'component' && show" class="swiper-container" [config]="config" fxFlex="auto">
+                    <div *ngFor="let image of vinList" class="swiper-slide">
+                        <div fxLayout="column" class="element-active car-item" fxLayoutAlign="center center" fxFlexFill>
+                            <div class="model-image">
+                                <div class="model-image" *ngIf="image.source.includes('-blob.png')" (click)="showDetail(image)">
+                                    <img src="{{image.source}}" />
+                                </div>
+
+                                <div class="model-item" *ngIf="image.source.includes('-blob.mov')  || image.source.includes('-blob.mp4')" (click)="showDetailVideo(image)">
+                                    <video width="100%" poster="./assets/img/CirculoColored.png" class="model-image">
+                    <source [src]="" type="video/quicktime">
+                    <source [src]="" type="video/mp4"> 
+                    <source [src]="" type="video/mpeg"> 
+                  </video>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </swiper>
+            </div>
+        </div>
+    </div>
+</div>

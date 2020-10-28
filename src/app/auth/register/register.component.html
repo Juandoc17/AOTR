@@ -1,0 +1,56 @@
+<!-- M A I N  V I E W -->
+<div class="header-home">
+  <div class="logo"></div>
+  <h1 class="bmw-title">AOT</h1>
+  <div></div>
+</div>
+<div class="container-form">
+  <div></div>
+  <div>
+    <div class="item">
+      <h2>REGISTER:</h2>
+    </div>
+    <div class="item">
+      <p>Type your DealerID, password and country in order to get full access to the admin application.</p>
+    </div>
+
+    <form [formGroup]="loginForm" class="container-fields2">
+      <div class="item">
+      </div>
+      <div class="item">
+        <input type="text" formControlName="userid" placeholder="Dealer ID">
+      </div>
+
+      <div class="item">
+      </div>
+      <div class="item">
+        <input type="password" formControlName="password" placeholder="Password">
+      </div>
+
+      <div class="item">
+      </div>
+      <div class="item last">
+        <input type="text" formControlName="country" placeholder="Country">
+      </div>
+      <div class="item">
+
+      </div>
+      <div class="item">
+        <button *ngIf="!loading" class="bmw-btn" (click)="registerDealer()" [disabled]="!loginForm.valid">
+          <a>REGISTER</a>
+        </button>
+        <button *ngIf="loading" class="bmw-btn">
+          <i class="fas fa-circle-notch fa-spin"></i>
+        </button>
+      </div>
+      
+    </form>
+
+    <div class="item error">
+      <p>
+        {{error}}
+      </p>
+    </div>
+
+  </div>
+</div>
